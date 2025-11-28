@@ -1,0 +1,6 @@
+[
+    {
+        "name": "AOS",
+        "toolchainFile": "kernel.toolchain.cmake"
+    }
+]
