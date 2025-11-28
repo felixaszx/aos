@@ -136,7 +136,6 @@ interrupt_disaptch(krn::isr_state_t* ctx)
         case krn::isr_state_t::rsvd0:
         case krn::isr_state_t::rsvd1:
         case krn::isr_state_t::rsvd2:
-        case krn::isr_state_t::rsvd2_last:
         case krn::isr_state_t::external_vtx:
         case krn::isr_state_t::last_vtx:
         {

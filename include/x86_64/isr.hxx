@@ -32,8 +32,8 @@ namespace krn
             VE,
             CP,
             rsvd2 = 22,
-            rsvd2_last = 31,
-            external_vtx = 32,
+            rsvd2_end = 32,
+            external_vtx = rsvd2_end,
             last_vtx = 255
         };
 
