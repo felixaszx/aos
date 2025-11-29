@@ -14,9 +14,6 @@ namespace krn
 
     void //
     init_idt_and_segment();
-
-    void //
-    init_kvmm();
 } // namespace krn
 
 void //
@@ -75,14 +72,21 @@ krn::init_idt_and_segment()
     sti();
 }
 
-void //
-krn::init_kvmm()
+// paging
+#include "paging.hxx"
+
+namespace krn
 {
-    cpuid_ret_t cpu_id = cpuid(1);
-    bool apic = cpu_id.edx_ & bit_APIC;
-    
-    if(!apic)
-    {
-        hcf();
-    }
+    extern phy_mem_mgr pmm;
+    extern vmm krn_vmm;
+
+    void //
+    init_kmm();
+} // namespace krn
+
+void //
+krn::init_kmm()
+{
+    krn_vmm.init();
+    pmm.init();
 }

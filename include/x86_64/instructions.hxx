@@ -3,7 +3,7 @@
 
 #include "std_extention.hxx"
 #include "segment.hxx"
-#include <cpuid.h>
+#include "cpuid.h"
 
 namespace krn
 {

@@ -14,9 +14,18 @@ namespace krn
 
     void //
     init_idt_and_segment();
+} // namespace krn
+
+// paging
+#include "paging.hxx"
+
+namespace krn
+{
+    phy_mem_mgr pmm = {};
+    vmm krn_vmm = {};
 
     void //
-    init_kvmm();
+    init_kmm();
 } // namespace krn
 
 #include "limine.h"
@@ -42,5 +51,5 @@ krn::krn::init0()
                               framebuffer->blue_mask_size, framebuffer->blue_mask_shift, nullptr, nullptr, nullptr,
                               nullptr, nullptr, nullptr, nullptr, nullptr, 0, 0, 1, 0, 0, 0);
     init_idt_and_segment();
-    init_kvmm();
+    init_kmm();
 }

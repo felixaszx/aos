@@ -147,7 +147,7 @@ namespace krn
         }
     } __attribute__((packed));
 
-    using gdt_t __attribute__((aligned(0x10))) = seg_desc_t[7];
+    using gdt_t __attribute__((aligned(16_b))) = seg_desc_t[7];
 
     struct gdtr_t
     {
@@ -258,7 +258,7 @@ namespace krn
     } __attribute__((packed));
 
     inline constexpr u64 MAX_IDT_ENTRY_COUNT = 256;
-    using idt_t __attribute__((aligned(0x10))) = gate_desc_t[MAX_IDT_ENTRY_COUNT];
+    using idt_t __attribute__((aligned(16_b))) = gate_desc_t[MAX_IDT_ENTRY_COUNT];
     struct idtr_t
     {
         u16 size_ = 0;

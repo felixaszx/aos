@@ -5,15 +5,8 @@
 
 namespace krn
 {
-    // kernel virtual memory manager
-    struct kvmm
-    {
-    };
-
     struct krn
     {
-        kvmm kvmm_ = {};
-
         void //
         init0();
     };
