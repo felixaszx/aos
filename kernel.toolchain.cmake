@@ -17,6 +17,8 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic-errors \
 -fno-stack-check \
 -fno-lto \
 -fno-PIC \
+-fno-pic \
+-fno-pie \
 -ffunction-sections \
 -fdata-sections \
 -m64 \

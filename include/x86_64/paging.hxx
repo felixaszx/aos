@@ -188,7 +188,7 @@ namespace krn
       public:
         vaddr_t() = default;
 
-        inline constexpr vaddr_t(const u64& addr) { (*(castr(u64*, this))) = addr; }
+        inline constexpr vaddr_t(u64 addr) { (*(castr(u64*, this))) = addr; }
 
         inline constexpr //
         operator u64() const
@@ -197,10 +197,34 @@ namespace krn
         }
 
         inline constexpr vaddr_t& //
-        operator=(const u64& addr)
+        operator=(u64 addr)
         {
             (*(castr(u64*, this))) = addr;
             return *this;
+        }
+
+        inline constexpr bool //
+        operator<=(vaddr_t& addr) const
+        {
+            return casts(u64, *this) <= addr;
+        }
+
+        inline constexpr bool //
+        operator>=(vaddr_t addr) const
+        {
+            return casts(u64, *this) >= addr;
+        }
+
+        inline constexpr bool //
+        operator<(vaddr_t addr) const
+        {
+            return casts(u64, *this) < addr;
+        }
+
+        inline constexpr bool //
+        operator>(vaddr_t addr) const
+        {
+            return casts(u64, *this) > addr;
         }
 
         inline constexpr void //

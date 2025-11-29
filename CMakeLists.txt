@@ -16,7 +16,8 @@ file(GLOB SRC
     "src/${CMAKE_SYSTEM_PROCESSOR}/*.s")
 file(GLOB flanterm_SRC 
     "thirdparty/Flanterm/src/*.c" 
-    "thirdparty/Flanterm/src/flanterm_backends/*.c")
+    "thirdparty/Flanterm/src/flanterm_backends/*.c"
+    "thirdparty/printf/printf.c")
 
 add_executable(aos.kernel
     ${SRC}

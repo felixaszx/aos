@@ -87,6 +87,6 @@ namespace krn
 void //
 krn::init_kmm()
 {
-    krn_vmm.init();
     pmm.init();
+    krn_vmm.init();
 }

@@ -75,3 +75,14 @@ namespace limine
         volatile u64 limine_requests_end_marker[] = LIMINE_REQUESTS_END_MARKER;
     };
 }; // namespace limine
+
+#include "flanterm.h"
+
+extern "C"
+{
+    extern flanterm_context* ft_ctx;
+    void _putchar(char character)
+    {
+        flanterm_write(ft_ctx, &character, 1);
+    }
+};
